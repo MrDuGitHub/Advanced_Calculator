@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\work.o
+./debug\action.o
+./debug\mode.o
+./debug\addaction.o
+./debug\conn.o
+./debug\keyevent.o
+./debug\help.o
+./debug\qrc_myresource.o
+./debug\moc_mainwindow.o
+./debug\moc_conn.o
+./debug\moc_help.o
+);

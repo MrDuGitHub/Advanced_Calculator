@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\work.o
+./release\action.o
+./release\mode.o
+./release\addaction.o
+./release\conn.o
+./release\keyevent.o
+./release\help.o
+./release\qrc_myresource.o
+./release\moc_mainwindow.o
+./release\moc_conn.o
+./release\moc_help.o
+);

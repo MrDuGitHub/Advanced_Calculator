@@ -1,0 +1,165 @@
+#include"mainwindow.h"
+#include "ui_mainwindow.h"
+#include<qDebug>
+
+void MainWindow::connect_mode()
+{
+    connect(ui->Clear,SIGNAL(clicked()),this,SLOT(on_clear_clicked()));
+    connect(ui->Clear_entry,SIGNAL(clicked()),this,SLOT(on_clear_entry_clicked()));
+    connect(ui->Delete_1,SIGNAL(clicked()),this,SLOT(on_delete_2_clicked()));
+    connect(ui->divide_2,SIGNAL(clicked()),this,SLOT(on_divide_clicked()));
+    connect(ui->equal_2,SIGNAL(clicked()),this,SLOT(on_equal_clicked()));
+    connect(ui->mem_clear_2,SIGNAL(clicked()),this,SLOT(on_mem_clear_clicked()));
+    connect(ui->mem_minus_2,SIGNAL(clicked()),this,SLOT(on_mem_minus_clicked()));
+    connect(ui->mem_plus_2,SIGNAL(clicked()),this,SLOT(on_mem_plus_clicked()));
+    connect(ui->mem_save_2,SIGNAL(clicked()),this,SLOT(on_mem_save_clicked()));
+    connect(ui->minus_2,SIGNAL(clicked()),this,SLOT(on_minus_clicked()));
+    connect(ui->mm_read_2,SIGNAL(clicked()),this,SLOT(on_mm_read_clicked()));
+    connect(ui->N0,SIGNAL(clicked()),this,SLOT(on_number_0_clicked()));
+    connect(ui->N1,SIGNAL(clicked()),this,SLOT(on_number_1_clicked()));
+    connect(ui->N2,SIGNAL(clicked()),this,SLOT(on_number_2_clicked()));
+    connect(ui->N3,SIGNAL(clicked()),this,SLOT(on_number_3_clicked()));
+    connect(ui->N4,SIGNAL(clicked()),this,SLOT(on_number_4_clicked()));
+    connect(ui->N5,SIGNAL(clicked()),this,SLOT(on_number_5_clicked()));
+    connect(ui->N6,SIGNAL(clicked()),this,SLOT(on_number_6_clicked()));
+    connect(ui->N7,SIGNAL(clicked()),this,SLOT(on_number_7_clicked()));
+    connect(ui->N8,SIGNAL(clicked()),this,SLOT(on_number_8_clicked()));
+    connect(ui->N9,SIGNAL(clicked()),this,SLOT(on_number_9_clicked()));
+    connect(ui->plus_2,SIGNAL(clicked()),this,SLOT(on_plus_clicked()));
+    connect(ui->point_2,SIGNAL(clicked()),this,SLOT(on_point_clicked()));
+    connect(ui->sqrt,SIGNAL(clicked()),this,SLOT(on_radical_sign_clicked()));
+    connect(ui->negate_2,SIGNAL(clicked()),this,SLOT(on_negate_clicked()));
+    connect(ui->square_2,SIGNAL(clicked()),this,SLOT(on_square_clicked()));
+    connect(ui->times_2,SIGNAL(clicked()),this,SLOT(on_times_clicked()));
+    connect(ui->reciprocal_2,SIGNAL(clicked()),this,SLOT(on_reciprocal_clicked()));
+}
+
+void MainWindow::reset()
+{
+    on_mode_clicked();
+}
+
+void MainWindow::on_mode_clicked()
+{
+    if (ui->mode->text()=="标准")
+    {
+        ui->mode->setText("科学");
+        change(false);
+        on_HYP_2_clicked();
+        on_arrow_2_clicked();
+    }
+    else
+    {
+        ui->mode->setText("标准");
+        change(true);
+    }
+}
+
+void MainWindow::change(bool f)
+{
+    ui->number_0->setVisible(f);
+    ui->number_1->setVisible(f);
+    ui->number_2->setVisible(f);
+    ui->number_3->setVisible(f);
+    ui->number_4->setVisible(f);
+    ui->number_5->setVisible(f);
+    ui->number_6->setVisible(f);
+    ui->number_7->setVisible(f);
+    ui->number_8->setVisible(f);
+    ui->number_9->setVisible(f);
+    ui->clear->setVisible(f);
+    ui->clear_entry->setVisible(f);
+    ui->delete_2->setVisible(f);
+    ui->equal->setVisible(f);
+    ui->mem_clear->setVisible(f);
+    ui->mem_minus->setVisible(f);
+    ui->mem_plus->setVisible(f);
+    ui->mem_save->setVisible(f);
+    ui->minus->setVisible(f);
+    ui->mm_read->setVisible(f);
+    ui->negate->setVisible(f);
+    ui->plus->setVisible(f);
+    ui->point->setVisible(f);
+    ui->square->setVisible(f);
+    ui->times->setVisible(f);
+    ui->reciprocal->setVisible(f);
+    ui->percent->setVisible(f);
+    ui->divide->setVisible(f);
+    ui->radical_sign->setVisible(f);
+
+    ui->arrow->setVisible(!f);
+    ui->Clear->setVisible(!f);
+    ui->Clear_entry->setVisible(!f);
+    ui->cos->setVisible(!f);
+    ui->Delete_1->setVisible(!f);
+    ui->divide_2->setVisible(!f);
+    ui->equal_2->setVisible(!f);
+    ui->Exp->setVisible(!f);
+    ui->F_E->setVisible(!f);
+    ui->HYP->setVisible(!f);
+    ui->Left_Pare->setVisible(!f);
+    ui->log->setVisible(!f);
+    ui->mem_clear_2->setVisible(!f);
+    ui->mem_minus_2->setVisible(!f);
+    ui->mem_plus_2->setVisible(!f);
+    ui->mem_save_2->setVisible(!f);
+    ui->minus_2->setVisible(!f);
+    ui->mm_read_2->setVisible(!f);
+    ui->Mod->setVisible(!f);
+    ui->N0->setVisible(!f);
+    ui->N1->setVisible(!f);
+    ui->N2->setVisible(!f);
+    ui->N3->setVisible(!f);
+    ui->N4->setVisible(!f);
+    ui->N5->setVisible(!f);
+    ui->N6->setVisible(!f);
+    ui->N7->setVisible(!f);
+    ui->N8->setVisible(!f);
+    ui->N9->setVisible(!f);
+    ui->negate_2->setVisible(!f);
+    ui->pi->setVisible(!f);
+    ui->plus_2->setVisible(!f);
+    ui->point_2->setVisible(!f);
+    ui->power_ten->setVisible(!f);
+    ui->power_y->setVisible(!f);
+    ui->GRD->setVisible(!f);
+    ui->Right_Pare->setVisible(!f);
+    ui->sin->setVisible(!f);
+    ui->times_2->setVisible(!f);
+    ui->square_2->setVisible(!f);
+    ui->sqrt->setVisible(!f);
+    ui->tan->setVisible(!f);
+    ui->factorial->setVisible(!f);
+    ui->sinh->setVisible(!f);
+    ui->cosh->setVisible(!f);
+    ui->tanh->setVisible(!f);
+    ui->sinh_01->setVisible(!f);
+    ui->cosh_01->setVisible(!f);
+    ui->tanh_01->setVisible(!f);
+    ui->HYP->setVisible(!f);
+    ui->HYP_2->setVisible(!f);
+    ui->cube->setVisible(!f);
+    ui->reciprocal_2->setVisible(!f);
+    ui->N_Reagan->setVisible(!f);
+    ui->N_power->setVisible(!f);
+    ui->ln->setVisible(!f);
+    ui->deg->setVisible(!f);
+    ui->dms->setVisible(!f);
+    ui->sin_01->setVisible(!f);
+    ui->cos_01->setVisible(!f);
+    ui->tan_01->setVisible(!f);
+    ui->arrow->setVisible(!f);
+    ui->arrow_2->setVisible(!f);
+    if (f)
+    {
+        ui->sinh->setEnabled(false);
+        ui->cosh->setEnabled(false);
+        ui->tanh->setEnabled(false);
+        ui->sin_01->setEnabled(false);
+        ui->cos_01->setEnabled(false);
+        ui->tan_01->setEnabled(false);
+        ui->sinh_01->setEnabled(false);
+        ui->cosh_01->setEnabled(false);
+        ui->tanh_01->setEnabled(false);
+    }
+}
